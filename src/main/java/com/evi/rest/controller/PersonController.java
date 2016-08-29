@@ -20,11 +20,27 @@ import java.util.List;
 
 @Controller
 public class PersonController {
-
     private static final Logger LOG = LoggerFactory.getLogger(PersonController.class);
 
     private PersonService personService;
     private PersonFormValidator personFormValidator;
+
+    @Autowired
+    @Qualifier(value="personService")
+    public void setPersonService(PersonService ps) {
+        this.personService = ps;
+    }
+
+    @Autowired
+    @Qualifier(value="personFormValidator")
+    public void setPersonFormValidator(PersonFormValidator personFormValidator) {
+        this.personFormValidator = personFormValidator;
+    }
+
+    @InitBinder
+    protected void initBinder(WebDataBinder binder) {
+        binder.setValidator(personFormValidator);
+    }
 
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -43,22 +59,9 @@ public class PersonController {
         return model;
     }
 
-
-    @Autowired
-    @Qualifier(value="personService")
-    public void setPersonService(PersonService ps) {
-        this.personService = ps;
-    }
-
-    @Autowired
-    @Qualifier(value="personFormValidator")
-    public void setPersonFormValidator(PersonFormValidator personFormValidator) {
-        this.personFormValidator = personFormValidator;
-    }
-
-    @InitBinder
-    protected void initBinder(WebDataBinder binder) {
-        binder.setValidator(personFormValidator);
+    @RequestMapping(value = "/denied", method = RequestMethod.GET)
+    public String denied() {
+        return "denied";
     }
 
     @RequestMapping(value = "/persons/list", method = RequestMethod.GET)
