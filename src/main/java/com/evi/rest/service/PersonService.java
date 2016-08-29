@@ -1,0 +1,22 @@
+package com.evi.rest.service;
+
+import com.evi.rest.model.Person;
+import com.evi.rest.model.Selected;
+
+import java.util.List;
+
+public interface PersonService {
+
+    void addPerson(Person p);
+
+    void updatePerson(Person p);
+
+    List<Person> listPersons();
+
+    Person getPersonById(int id);
+
+    void removePerson(int id);
+
+    List<String> processPersons(Selected selected);
+
+}
