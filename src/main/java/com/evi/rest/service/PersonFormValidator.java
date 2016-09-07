@@ -10,8 +10,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @Component("personFormValidator")
 public class PersonFormValidator implements Validator {
@@ -38,7 +36,6 @@ public class PersonFormValidator implements Validator {
 
         validateBirthDate(errors);
 
-        tryCyrillicValidation(errors);
     }
 
     private void validateBirthDate(Errors errors) {
@@ -67,12 +64,4 @@ public class PersonFormValidator implements Validator {
         errors.rejectValue("birthDate", "format.person.birthDate", "Please use dd.MM.yyyy date format");
     }
 
-    private void tryCyrillicValidation(Errors errors) {
-        String middleName = (String)errors.getFieldValue("middleName");
-        Pattern RUS = Pattern.compile("^[?-??-???]+$");
-        Matcher matcher = RUS.matcher(middleName);
-        if (! matcher.matches()) {
-//            errors.rejectValue("middleName", "format.person.middleName", "Use Cyrillic, please");
-        }
-    }
 }

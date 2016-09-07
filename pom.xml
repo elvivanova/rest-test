@@ -219,6 +219,44 @@
       <version>2.0</version>
     </dependency>
 
+<!--    <dependency>
+      <groupId>javax.websocket</groupId>
+      <artifactId>javax.websocket-api</artifactId>
+      <version>1.0</version>
+    </dependency>-->
+
+<!--    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+      <version>1.0.0.GA</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>5.1.2.Final</version>
+    </dependency>-->
+
+    <!--    <dependency>
+          <groupId>org.apache.tomcat</groupId>
+          <artifactId>tomcat-websocket</artifactId>
+          <version>8.5.4</version>
+        </dependency>-->
+<!--    <dependency>
+      <groupId>org.apache.tomcat.embed</groupId>
+      <artifactId>tomcat-embed-core</artifactId>
+      <version>8.5.4</version>
+    </dependency>-->
+<!--
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat-coyote</artifactId>
+      <version>7.0.70</version>
+      <scope>provided</scope>
+    </dependency>
+-->
+
   </dependencies>
 
   <build>
@@ -243,6 +281,42 @@
           <mainClass>org.test.int1.Main</mainClass>
         </configuration>
       </plugin>
+
+<!--      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+      </plugin>-->
+
+<!--      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat6-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <path>/ecs</path>
+          <port>8080</port>
+          <uriEncoding>UTF-8</uriEncoding>
+          <systemProperties>
+            <running.environment>devel</running.environment>
+          </systemProperties>
+        </configuration>
+      </plugin>-->
+
+<!--      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.1</version>
+        <configuration>
+          <server>tomcat</server>
+          <contextFile>tomcat/context.xml</contextFile>
+          <path>/rest-test</path>
+          <port>8080</port>
+          <uriEncoding>UTF-8</uriEncoding>
+          <systemProperties>
+            <running.environment>devel</running.environment>
+          </systemProperties>
+        </configuration>
+      </plugin>-->
+
     </plugins>
     <finalName>${project.artifactId}</finalName>
   </build>

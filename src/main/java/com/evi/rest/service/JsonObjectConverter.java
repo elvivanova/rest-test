@@ -1,16 +1,16 @@
 package com.evi.rest.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+/*import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;*/
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
 @Component
 public class JsonObjectConverter<T> {
-    private ObjectMapper mapper = new ObjectMapper();
+/*    private ObjectMapper mapper = new ObjectMapper();*/
 
-    public T getObj(String content, Class<T> clazz) {
+/*    public T getObj(String content, Class<T> clazz) {
         T obj;
         try {
             obj = mapper.readValue(content, clazz);
@@ -23,9 +23,9 @@ public class JsonObjectConverter<T> {
         }
 
         return obj;
-    }
+    }*/
 
-    public String getJson(T obj) {
+/*    public String getJson(T obj) {
         String json;
         try {
             json = mapper.writeValueAsString(obj);
@@ -36,5 +36,5 @@ public class JsonObjectConverter<T> {
         }
 
         return json;
-    }
+    }*/
 }

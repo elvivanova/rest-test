@@ -59,7 +59,7 @@ public class PersonController {
         return model;
     }
 
-    @RequestMapping(value = "/denied", method = RequestMethod.GET)
+    @RequestMapping(value = "/denied")
     public String denied() {
         return "denied";
     }
@@ -92,7 +92,7 @@ public class PersonController {
             personService.updatePerson(p);
         }
 
-        return "redirect:/persons/list";
+        return "redirect:/persons";
     }
 
     @RequestMapping(value= "/persons/process", method = RequestMethod.POST)
@@ -119,11 +119,6 @@ public class PersonController {
         model.addAttribute("person", personService.getPersonById(id));
         model.addAttribute("listPersons", personService.listPersons());
         return "person";
-    }
-
-    @RequestMapping(value = "/persons/result", method = RequestMethod.GET)
-    public String listResult(Model model) {
-        return "redirect:/persons";
     }
 
 }
