@@ -8,7 +8,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
 
 import java.text.DateFormat;
@@ -16,7 +15,6 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.*;
 
-@Repository
 public class PersonDAOImpl implements com.evi.rest.dao.PersonDAO {
 	private static final Logger LOG = LoggerFactory.getLogger(PersonDAOImpl.class);
 
