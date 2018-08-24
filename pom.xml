@@ -18,7 +18,7 @@
     <bootstarter-version>1.4.0.RELEASE</bootstarter-version>
   </properties>
 
-  <url>http:/aven.apache.org</url>
+  <url>http:/maven.apache.org</url>
 
   <dependencies>
     <!-- Spring -->
